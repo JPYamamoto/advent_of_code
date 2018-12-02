@@ -1,4 +1,6 @@
 defmodule AdventOfCode2018.Day01 do
+  alias AdventOfCode2018.Utils
+
   @moduledoc """
   Module for [AdventOfCode](https://adventofcode.com/) - [Day 01](https://adventofcode.com/2018/day/1).
   """
@@ -18,7 +20,7 @@ defmodule AdventOfCode2018.Day01 do
   end
 
   @doc """
-  Get the first number that is appears twice as the result
+  Get the first number that appears twice as the result
   of adding numbers one-by-one.
 
   Those numbers are retrieved from a `file`.
@@ -26,7 +28,7 @@ defmodule AdventOfCode2018.Day01 do
   If no result is found after adding all numbers, the loop
   goes back to the first number of the list.
   """
-  @spec part1(String.t()) :: integer()
+  @spec part2(String.t()) :: integer()
   def part2(file) do
     nums = file |> get_nums() |> Enum.to_list()
     [first | _] = nums
