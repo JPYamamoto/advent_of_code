@@ -1,4 +1,6 @@
 defmodule AdventOfCode2018.Day02 do
+  alias AdventOfCode2018.Utils
+
   @moduledoc """
   Module for [AdventOfCode](https://adventofcode.com/) - [Day 02](https://adventofcode.com/2018/day/2).
   """
@@ -55,14 +57,6 @@ defmodule AdventOfCode2018.Day02 do
     end
   end
 
-  defp stream_lines(file) do
-    file_path = Path.join(:code.priv_dir(:advent_of_code_2018), file)
-
-    file_path
-    |> File.stream!()
-    |> Stream.map(&String.trim_trailing(&1))
-  end
-
   defp get_repetitions(word) do
     chars = String.graphemes word
 
@@ -93,7 +87,7 @@ defmodule AdventOfCode2018.Day02 do
     Counter.start_link()
 
     file
-    |> stream_lines()
+    |> Utils.stream_lines()
     |> Stream.each(&get_repetitions/1)
     |> Stream.run()
 
@@ -113,7 +107,7 @@ defmodule AdventOfCode2018.Day02 do
   """
   @spec part1(String.t()) :: String.t()
   def part2(file) do
-    lines = stream_lines(file)
+    lines = Utils.stream_lines(file)
 
     {id_1, id_2, _} = lines
       |> Stream.flat_map(fn line -> compare(line, lines) end)

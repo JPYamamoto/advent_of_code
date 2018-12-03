@@ -37,11 +37,8 @@ defmodule AdventOfCode2018.Day01 do
   end
 
   defp get_nums(file) do
-    file_path = Path.join(:code.priv_dir(:advent_of_code_2018), file)
-
-    file_path
-    |> File.stream!()
-    |> Stream.map(&String.trim_trailing(&1))
+    file
+    |> Utils.stream_lines()
     |> Stream.map(&String.to_integer(&1))
   end
 
