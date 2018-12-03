@@ -1,6 +1,16 @@
 defmodule AdventOfCode2018.Day03 do
   alias AdventOfCode2018.Utils
 
+  @moduledoc """
+  Module for [AdventOfCode](https://adventofcode.com/) - [Day 03](https://adventofcode.com/2018/day/3).
+  """
+
+  @doc """
+  From a `file`, parse the data given of a set of "claims",
+  and retrieve the number of overlapping points when ordered
+  in a grid.
+  """
+  @spec part1(String.t()) :: integer()
   def part1(file) do
     file
     |> Utils.stream_lines()
@@ -10,6 +20,11 @@ defmodule AdventOfCode2018.Day03 do
     |> Enum.count(fn {_, count} -> count > 1 end)
   end
 
+  @doc """
+  Parse a set of claims and retrieve the ID
+  of the only non-overlapping instance.
+  """
+  @spec part2(String.t()) :: String.t()
   def part2(file) do
     claims = file
       |> Utils.stream_lines()
