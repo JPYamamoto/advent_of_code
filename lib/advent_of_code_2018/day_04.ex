@@ -2,7 +2,7 @@ defmodule AdventOfCode2018.Day04 do
   alias AdventOfCode2018.Utils
 
   @moduledoc """
-  Module for [AdventOfCode](https://adventofcode.com/) - [Day 03](https://adventofcode.com/2018/day/3).
+  Module for [AdventOfCode](https://adventofcode.com/) - [Day 04](https://adventofcode.com/2018/day/4).
   """
 
   @doc """
