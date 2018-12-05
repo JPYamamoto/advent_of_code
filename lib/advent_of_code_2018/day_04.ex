@@ -1,6 +1,17 @@
 defmodule AdventOfCode2018.Day04 do
   alias AdventOfCode2018.Utils
 
+  @moduledoc """
+  Module for [AdventOfCode](https://adventofcode.com/) - [Day 03](https://adventofcode.com/2018/day/3).
+  """
+
+  @doc """
+  Parse the records in chronological order from a `file`
+  and get the ID of the guard that spends the most time
+  asleep, and multiply it by the minute in which the
+  guard most often is asleep.
+  """
+  @spec part1(String.t()) :: integer()
   def part1(file) do
     guards_schedule = file |> Utils.stream_lines() |> get_intervals()
 
@@ -11,6 +22,25 @@ defmodule AdventOfCode2018.Day04 do
     [[minute | _] | _] = intervals
     |> get_minutes_of()
     |> Enum.sort(fn minute1, minute2 -> length(minute1) > length(minute2) end)
+
+    id * minute
+  end
+
+  @doc """
+  Parse the records in chronological order from a `file`
+  and get the ID of the guard that is asleep the most
+  often at any given minute, and get the product of the
+  ID and the minute.
+  """
+  @spec part2(String.t()) :: integer()
+  def part2(file) do
+    {id, {minute, _}} = file
+    |> Utils.stream_lines()
+    |> get_intervals()
+    |> Enum.map(fn {id, intervals} -> {id, intervals |> get_minutes_of() |> max_minutes()} end)
+    |> Enum.filter(fn {_, minute} -> minute end)
+    |> Enum.sort_by(fn {_, {_, counter}} -> counter end, &>/2)
+    |> Enum.at(0)
 
     id * minute
   end
@@ -54,17 +84,5 @@ defmodule AdventOfCode2018.Day04 do
     |> Enum.map(fn min -> {Enum.at(min, 0), length(min)} end)
     |> Enum.sort_by(fn {_, count} -> count end, &>/2)
     |> Enum.at(0)
-  end
-
-  def part2(file) do
-    {id, {minute, _}} = file
-    |> Utils.stream_lines()
-    |> get_intervals()
-    |> Enum.map(fn {id, intervals} -> {id, intervals |> get_minutes_of() |> max_minutes()} end)
-    |> Enum.filter(fn {_, minute} -> minute end)
-    |> Enum.sort_by(fn {_, {_, counter}} -> counter end, &>/2)
-    |> Enum.at(0)
-
-    id * minute
   end
 end
