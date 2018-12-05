@@ -8,6 +8,8 @@ I went with Elixir as my language of choice to solve the challenge, while improv
 * [Day 01 - AoC 2018](https://medium.com/@JPYamamoto9/day-01-advent-of-code-2018-elixir-dc25cad414ca)
 * [Day 02 - AoC 2018](https://medium.com/@JPYamamoto9/day-02-advent-of-code-2018-elixir-f695935b131b)
 * [Day 03 - AoC 2018](https://medium.com/@JPYamamoto9/day-03-advent-of-code-2018-5a150beb5b0e)
+* [Day 04 - AoC 2018](https://medium.com/@JPYamamoto9/day-04-advent-of-code-2018-f5a19beb4447)
+* [Day 05 - AoC 2018](https://medium.com/@JPYamamoto9/day-05-advent-of-code-2018-4f4fd744cae6)
 
 ## How to use this repo?
 
