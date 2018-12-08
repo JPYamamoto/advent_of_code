@@ -34,7 +34,7 @@ defmodule AdventOfCode2018.Day06 do
 
   Using the Manhattan Distance algorithm.
   """
-  @spec part1(String.t(), integer()) :: integer()
+  @spec part2(String.t(), integer()) :: integer()
   def part2(file, limit) do
     points = get_points(file)
 

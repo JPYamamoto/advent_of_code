@@ -4,7 +4,7 @@ defmodule AdventOfCode2018.Day05Test do
   import AdventOfCode2018.Day05
 
   describe "Tests Part 1" do
-    test "part1" do
+    test "test_1" do
       input = "day_05/test_1.txt" 
       result = part1(input)
   
@@ -13,7 +13,7 @@ defmodule AdventOfCode2018.Day05Test do
   end
 
   describe "Tests Part 2" do
-    test "part2" do
+    test "test_1" do
       input = "day_05/test_1.txt" 
       result = part2(input)
   

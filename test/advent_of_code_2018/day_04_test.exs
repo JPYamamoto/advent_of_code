@@ -13,7 +13,7 @@ defmodule AdventOfCode2018.Day04Test do
   end
 
   describe "Test Part 2" do
-    test "part2" do
+    test "test_1" do
       input = "day_04/test_1.txt"
       result = part2(input)
   
