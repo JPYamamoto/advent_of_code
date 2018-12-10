@@ -5,10 +5,10 @@ defmodule Mix.Tasks.D09.P1 do
 
   @shortdoc "Day 09 Part 1"
   def run(_) do
-    input = nil
+    num_players = 463
+    last_marble = 71787
 
-    input
-    |> part1()
+    solution(num_players, last_marble)
     |> IO.inspect(label: "Part 1 Results") 
   end
 end   
