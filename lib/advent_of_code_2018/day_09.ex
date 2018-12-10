@@ -19,6 +19,7 @@ defmodule AdventOfCode2018.Day09 do
   The player with the highest score after having placed all
   `marbles` is the winner.
   """
+  @spec solution(integer(), integer()) :: integer()
   def solution(players, marbles) do
     {_, score} = Zipper.from_list([0])
       |> add_marble(Map.new(1..players, fn player -> {player, 0} end), {1, players}, {1, marbles})
