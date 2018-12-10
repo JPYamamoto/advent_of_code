@@ -11,6 +11,7 @@ I went with Elixir as my language of choice to solve the challenge, while improv
 * [Day 04 - AoC 2018](https://medium.com/@JPYamamoto9/day-04-advent-of-code-2018-f5a19beb4447)
 * [Day 05 - AoC 2018](https://medium.com/@JPYamamoto9/day-05-advent-of-code-2018-4f4fd744cae6)
 * [Day 06 - AoC 2018](https://medium.com/@JPYamamoto9/day-06-advent-of-code-2018-5ae3a60662c3)
+* [Day 07 - AoC 2018](https://medium.com/@JPYamamoto9/day-07-advent-of-code-2018-fa90210a53)
 
 ## How to use this repo?
 
