@@ -68,8 +68,6 @@ defmodule AdventOfCode2018.Day10 do
       false -> "."
     end
 
-    IO.puts("\n-----Result-----\n")
-
     for y <- min_y..max_y do
       Enum.map(min_x..max_x, fn x -> Enum.any?(coords, fn {pos_x, pos_y, _, _} -> pos_x == x and pos_y == y end) end)
     end
