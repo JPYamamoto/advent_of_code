@@ -1,5 +1,24 @@
 defmodule AdventOfCode2018.Day11 do
+
+  @moduledoc """
+  Module for [AdventOfCode](https://adventofcode.com/) - [Day 11](https://adventofcode.com/2018/day/11).
+  """
+
+  @doc """
+  Given the serial number of a grid (`grid_sn`), find the
+  point at which the 3x3 square with the previous point
+  as its top left corner, contains the most fuel.
+  """
+  @spec part1(integer()) :: String.t()
   def part1(grid_sn), do: grid_sn |> summed_areas_table() |> best_of(3) |> max_of() |> print()
+
+  @doc """
+  Given the serial number of a grid (`grid_sn`), find the
+  point and size at which the square with the determined
+  size, contains the most fuel.
+  """
+  @spec part2(integer()) :: String.t()
+  def part2(grid_sn), do: grid_sn |> summed_areas_table() |> all_sizes_grid() |> max_of() |> print(:include_size)
 
   defp summed_areas_table(grid_sn) do
     Enum.reduce(1..300, %{}, fn y, table ->
@@ -39,6 +58,4 @@ defmodule AdventOfCode2018.Day11 do
   defp print({{x, y, size}, _}, :include_size), do: "#{x},#{y},#{size}"
 
   defp all_sizes_grid(cells), do: for size <- 1..300, do: best_of(cells, size) |> max_of()
-
-  def part2(grid_sn), do: grid_sn |> summed_areas_table() |> all_sizes_grid() |> max_of() |> print(:include_size)
 end
