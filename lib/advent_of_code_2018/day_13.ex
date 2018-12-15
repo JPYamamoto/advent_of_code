@@ -101,8 +101,7 @@ defmodule AdventOfCode2018.Day13 do
     end
   end
 
-  defp tick_until_one_left(c, r), do: tick_until_one_left(c, r, 1)
-  defp tick_until_one_left(carts, rails, iter) do
+  defp tick_until_one_left(carts, rails) do
     state =
       carts
       |> tick(rails)
@@ -110,7 +109,7 @@ defmodule AdventOfCode2018.Day13 do
 
     case length(state) == 1 do
       true -> hd(state)
-      _ -> tick_until_one_left(Map.new(state), rails, iter + 1)
+      _ -> tick_until_one_left(Map.new(state), rails)
     end
   end
 
