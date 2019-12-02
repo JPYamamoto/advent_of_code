@@ -23,7 +23,7 @@ I went with Elixir as my language of choice to solve the challenge, while improv
 2. Run the mix task according to the day and challenge you want to get the result of.
 
 ```
-git clone https://github.com/JPYamamoto/advent_of_code
+git clone https://github.com/JPYamamoto/advent_of_code_2018
 ```
 ```
 # To run the task of Day 01, Part 1:
